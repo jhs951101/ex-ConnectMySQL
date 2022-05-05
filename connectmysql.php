@@ -14,7 +14,6 @@ if(!$db_conn){
 }
 
 $query = "SELECT user, host FROM user";  // WHERE column1 LIKE ? AND column2 > ?
-
 $stmt = mysqli_prepare($db_conn, $query);
 
 if($stmt === false){
