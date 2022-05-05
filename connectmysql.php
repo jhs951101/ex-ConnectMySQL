@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<?php
-$db_conn = @mysqli_connect("localhost", "root", "123456", "mysql");
+$db_conn = @mysqli_connect("localhost", "root", "(비밀번호)", "mysql");
 
 if(!$db_conn){
 	$error = mysqli_connect_error();
