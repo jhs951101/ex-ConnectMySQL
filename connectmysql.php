@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
@@ -13,7 +13,10 @@ if(!$db_conn){
 	exit();
 }
 
+echo "MySQL 데이터베이스에 연결 성공!" . "<br/><br/>";
+
 $query = "SELECT user, host FROM user";  // WHERE column1 LIKE ? AND column2 > ?
+
 $stmt = mysqli_prepare($db_conn, $query);
 
 if($stmt === false){
@@ -40,7 +43,7 @@ if($exec === false){
 $result = mysqli_stmt_get_result($stmt);
 
 if($result){
-	echo "조회된 행의 수 : ".mysqli_num_rows($result)."<br/><br/>";
+	echo "user 테이블에서 조회된 행의 수 : " . mysqli_num_rows($result) . "<br/><br/>";
 	echo "(User) / (Host) <br/>";
 
 	while($row = mysqli_fetch_assoc($result)){
